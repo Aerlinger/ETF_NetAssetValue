@@ -1,4 +1,14 @@
-class SchemaV1 < ActiveRecord::Migration
+class SchemaV2 < ActiveRecord::Migration
+
+  drop_table "bonds"
+  drop_table "commodities"
+  drop_table "components"
+  drop_table "etfs"
+  drop_table "historical_dividends"
+  drop_table "historical_prices"
+  drop_table "stocks"
+  drop_table "options"
+
   create_table "bonds" do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

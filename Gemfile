@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.2.12'
 
 gem 'sqlite3'
+gem 'paperclip'
 
 
 # Gems used only for assets and not required
@@ -18,6 +18,22 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem "meta_request"
+
+  gem "rspec-rails"
+  gem "capybara"
+
+  gem "factory_girl_rails"
+  gem "factory_girl"
+  gem "database_cleaner"
+  gem "spork"
+  gem "guard-spork"
+
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
 end
 
 gem 'jquery-rails'
@@ -37,7 +53,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "rspec-rails", :group => [:test, :development]
 gem "better_errors", :group => [:development]
 gem "turn", :group => [:test]
 gem "pg", :group => [:production]

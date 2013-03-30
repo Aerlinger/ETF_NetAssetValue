@@ -1,4 +1,10 @@
 NavDatavbase::Application.routes.draw do
+  resources :stocks
+  resources :components
+  resources :etfs
+
+  root to: "etfs#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

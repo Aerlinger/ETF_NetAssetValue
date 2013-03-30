@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323224155) do
+ActiveRecord::Schema.define(:version => 20130330015750) do
 
   create_table "bonds", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -32,11 +32,12 @@ ActiveRecord::Schema.define(:version => 20130323224155) do
     t.integer  "commodity_id"
     t.decimal  "market_value"
     t.float    "weighting"
+    t.integer  "etf_id"
   end
 
   create_table "etfs", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "sponsor"
     t.string   "name"
     t.string   "symbol"
@@ -50,6 +51,17 @@ ActiveRecord::Schema.define(:version => 20130323224155) do
     t.decimal  "cash"
     t.string   "holding_type"
     t.string   "exchange"
+    t.string   "time_zone"
+    t.string   "composite_name"
+    t.string   "dividend_yield"
+    t.string   "composite_ticker"
+    t.integer  "total_shares"
+    t.string   "type"
+    t.string   "e_signal_ticker"
+    t.decimal  "market_cap"
+    t.decimal  "last_trade"
+    t.string   "location"
+    t.integer  "shares_outstanding"
   end
 
   create_table "historical_dividends", :force => true do |t|
@@ -74,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130323224155) do
     t.string   "symbol"
     t.string   "sector"
     t.string   "industry"
+    t.string   "exchange"
   end
 
 end
