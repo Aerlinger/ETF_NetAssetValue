@@ -18,8 +18,6 @@ describe Etf do
 
   describe "database names are adapted from the row titles in the CSV" do
 
-
-
   end
 
 end
