@@ -1,4 +1,5 @@
 NavDatavbase::Application.routes.draw do
+
   resources :stocks
   resources :components
   resources :etfs

@@ -8,7 +8,7 @@ loud' here), I think the simplest implementation revolves around three basic tab
 
 #### ETFs: An ETF is a *type of* security
 #### Stocks: A Stock is a *type of* security
-#### Components: Defines attribtes which define the relationship between ETF and stock (weighting, etc...)
+#### Components: Defines attributes which define the relationship between ETF and stock (weighting, etc...)
 
 ####Assumptions:
 ETFs and Stocks have an interesting relationship. An ETF can have many stocks, and a stock can belong to many ETFs. The
@@ -49,12 +49,14 @@ relationship between them is itself an entity that is described by component (An
   - Are mappings between columns in CSV and DB columns bijective?
 
 ### Important Files:
- (csv files go in lib/assets)
+ (CSV files go in lib/assets)
  <pre>/lib/assets</pre> 
  CSV Parsing:
  <pre>/lib/tasks</pre>
  DB Schema:
  <pre>/db/schema.rb</pre>
+ Tests:
+  <pre>/spec</pre>
 
 ---
 
@@ -67,6 +69,8 @@ relationship between them is itself an entity that is described by component (An
 ##### Populating DB with default ETF:
 ```rake db:seed```
 
+##### Running the tests:
+```rake db:seed```
 ----
 
 There are also a lot of shared attributes here between columns so down the line it may be beneficial to think about
