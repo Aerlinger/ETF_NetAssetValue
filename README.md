@@ -1,5 +1,5 @@
 ETF Net Asset Values from CSV
-================================
+----
 
 So this has been running through my mind ever since last weekend weekend. Looking at the spreadsheet there are 42 columns
 in total (I'm not going to list them here). Thinking about the structure from a bird's eye view (I'm sort of 'writing out
@@ -10,9 +10,15 @@ loud' here), I think the simplest implementation revolves around three basic tab
 #### Stocks: A Stock is a *type of* security
 #### Components: Defines attributes which define the relationship between ETF and stock (weighting, etc...)
 
-####Assumptions:
-ETFs and Stocks have an interesting relationship. An ETF can have many stocks, and a stock can belong to many ETFs. The
+#### Notes:
+ ETFs and Stocks have an interesting relationship. An ETF can have many stocks, and a stock can belong to many ETFs. The
 relationship between them is itself an entity that is described by component (An etf has many stocks through component and vice-versa).
+
+#### File format assumptions:
+ * Files are in .CSV (comma separated values) format.
+ * Column names are all on the first row.
+ * Column names have the same names across different files (order doesn't matter)
+ * Each ETF/Stock/Bond can be uniquely identified by one attribute such as the stock ticker (e.x. 'GLD', 'BAC', etc...)
 
 ### ETF:
   1. Sponsor
@@ -66,12 +72,13 @@ relationship between them is itself an entity that is described by component (An
 ##### Importing CSV files to database:
 ```rake csv:import```
 
-##### Populating DB with default ETF:
+##### Populating DB with a default ETF:
 ```rake db:seed```
 
 ##### Running the tests:
 ```rake db:seed```
-----
+
+---
 
 There are also a lot of shared attributes here between columns so down the line it may be beneficial to think about
 these relationships in terms of a common object through single inheritance (ETFs Stocks and bonds are all a type of security).

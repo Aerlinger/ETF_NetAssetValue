@@ -43,7 +43,6 @@ namespace :csv do
       print column_names << "\n"
 
       csv_row_names.each do |row_columns|
-        stock = Stock.new
 
         row_hash = Hash[column_names.zip(row_columns)]
 
